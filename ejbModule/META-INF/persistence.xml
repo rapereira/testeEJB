@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="testeEJB" transaction-type="RESOURCE_LOCAL">
+		<class>br.edu.nsi.iff.Area</class>
+		<class>br.edu.nsi.iff.Componente</class>
+		<class>br.edu.nsi.iff.Equipamento</class>
+		<class>br.edu.nsi.iff.Leitura</class>
+		<class>br.edu.nsi.iff.Montagem</class>
+		<class>br.edu.nsi.iff.Planta</class>
+		<class>br.edu.nsi.iff.Ponto</class>
+		<class>br.edu.nsi.iff.Pontosmontagen</class>
+		<class>br.edu.nsi.iff.Sensor</class>
+		<properties>       
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/> 
+            <property name="hibernate.connection.username" value="postgres"/> 
+            <property name="hibernate.connection.password" value="lapela"/> 
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/panoptes"/> 
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> 
+            <property name="hibernate.show_sql" value="true"/>                              
+        </properties>        
+	</persistence-unit>
+</persistence>
