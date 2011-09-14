@@ -2,7 +2,6 @@ package br.edu.nsi.iff;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 
 /**
@@ -16,9 +15,11 @@ public class Pico implements Serializable {
 	@Id
 	private String idpico;
 
-	private Timestamp datahora;
+	private float amplitude;
 
-	private float valorpico;
+	private float fase;
+
+	private float frequencia;
 
 	//bi-directional many-to-one association to Leitura
     @ManyToOne
@@ -36,20 +37,28 @@ public class Pico implements Serializable {
 		this.idpico = idpico;
 	}
 
-	public Timestamp getDatahora() {
-		return this.datahora;
+	public float getAmplitude() {
+		return this.amplitude;
 	}
 
-	public void setDatahora(Timestamp datahora) {
-		this.datahora = datahora;
+	public void setAmplitude(float amplitude) {
+		this.amplitude = amplitude;
 	}
 
-	public float getValorpico() {
-		return this.valorpico;
+	public float getFase() {
+		return this.fase;
 	}
 
-	public void setValorpico(float valorpico) {
-		this.valorpico = valorpico;
+	public void setFase(float fase) {
+		this.fase = fase;
+	}
+
+	public float getFrequencia() {
+		return this.frequencia;
+	}
+
+	public void setFrequencia(float frequencia) {
+		this.frequencia = frequencia;
 	}
 
 	public Leitura getLeitura() {

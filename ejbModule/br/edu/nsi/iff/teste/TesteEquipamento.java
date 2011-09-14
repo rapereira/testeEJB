@@ -4,7 +4,6 @@ import br.edu.nsi.iff.Equipamento;
 import br.edu.nsi.iff.controller.AreaJPAController;
 import br.edu.nsi.iff.controller.EquipamentoJPAController;
 
-@SuppressWarnings("unused")
 public class TesteEquipamento {
 
 	public static void main(String[] args){
@@ -16,7 +15,7 @@ public class TesteEquipamento {
 //		UUID uuid = UUID.randomUUID();
 //		String uid = uuid.toString();
 		
-		String uid = "3";
+		String uid = "1";
 		String descricao = "testeinsert";
 		String fabricante = "testeinsert";
 		String tag = "testeinsert";
@@ -25,7 +24,7 @@ public class TesteEquipamento {
 		AreaJPAController instanceArea = new AreaJPAController();
 		EquipamentoJPAController instanceEquipamento = new EquipamentoJPAController();
 
-		instanceEquipamento.insert(instanceArea.find("2"), uid, descricao, fabricante, tag, tipo);
+		instanceEquipamento.insert(instanceArea.find("1"), uid, descricao, fabricante, tag, tipo);
 		System.out.println("insert");
 	}
 	

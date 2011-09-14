@@ -13,7 +13,7 @@ public class TesteSensor {
 //		UUID uuid = UUID.randomUUID();
 //		String uid = uuid.toString();
 	
-		String uid = "3";
+		String uid = "1";
 		String descricao = "testeinsert";
 		String fabricante = "testeinsert";
 		String identificacao = "testeinsert";

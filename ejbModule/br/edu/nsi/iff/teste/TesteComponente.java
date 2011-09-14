@@ -14,14 +14,14 @@ public class TesteComponente {
 	public static void insert(){
 //		UUID uuid = UUID.randomUUID();
 //		String uid = uuid.toString();
-		String uid = "3";
+		String uid = "1";
 		String tag = "testeinsert";
         String descricao = "testeinsert";
         
         EquipamentoJPAController instanceEquipamento = new EquipamentoJPAController();
         ComponenteJPAController instanceComponente = new ComponenteJPAController();
         
-        instanceComponente.insert(instanceEquipamento.find("2"), uid, descricao, tag);
+        instanceComponente.insert(instanceEquipamento.find("1"), uid, descricao, tag);
         System.out.println("insert");
 	}
 	

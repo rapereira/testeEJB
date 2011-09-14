@@ -17,7 +17,7 @@ public class TesteLeitura {
 //		UUID uuid = UUID.randomUUID();
 //		String uid = uuid.toString();
 		
-		String uid = "3";
+		String uid = "1";
 		Timestamp datahora = new Timestamp(System.currentTimeMillis());
 		float deslocamento = 1;
 		float rmspicos = 1;
@@ -28,7 +28,7 @@ public class TesteLeitura {
 		LeituraJPAController instanceLeitura = new LeituraJPAController();
 		PontosmontagenJPAController instancePontosmontagen = new PontosmontagenJPAController();
 		
-		instanceLeitura.insert(instancePontosmontagen.find("2"), uid, datahora, deslocamento, rmspicos, rmsruido, rmstotal, rotacao);
+		instanceLeitura.insert(instancePontosmontagen.find("1"), uid, datahora, deslocamento, rmspicos, rmsruido, rmstotal, rotacao);
 		System.out.println("insert");
 	}
 	

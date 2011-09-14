@@ -16,7 +16,7 @@ public class TestePonto {
 //		UUID uuid = UUID.randomUUID();
 //		String uid = uuid.toString();
 	
-		String uid = "3";
+		String uid = "1";
 		String descricao = "testeinsert";
 		String posicao = "testeinsert";
 		String tag = "testeinsert";
@@ -28,7 +28,7 @@ public class TestePonto {
 		ComponenteJPAController instanceComponente = new ComponenteJPAController();
 		SensorJPAController instanceSensor = new SensorJPAController();
 		
-		instancePonto.insert(instanceComponente.find("2"), instanceSensor.find("2"), uid, descricao, posicao, tag, tipomedicao, valoralerta, valorshutdown);
+		instancePonto.insert(instanceComponente.find("1"), instanceSensor.find("1"), uid, descricao, posicao, tag, tipomedicao, valoralerta, valorshutdown);
 		System.out.println("insert");
 	}
 	

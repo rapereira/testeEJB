@@ -10,14 +10,14 @@ public class TestePlanta {
 
 	public static void main(String[] args) {
 
-		TestePlanta.list();
+		TestePlanta.update();
 	}
 
 	public static void insert(){
-		//		UUID uuid = UUID.randomUUID();
-		//		String uid = uuid.toString();
+			//	UUID uuid = UUID.randomUUID();
+			//	String uid = uuid.toString();
 
-		String uid = "3";
+		String uid = "1";
 
 		String tag = "testeinsert";
 		String descricao = "testeinsert";

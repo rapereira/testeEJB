@@ -17,14 +17,14 @@ public class TesteArea {
 	public static void insert(){
 //		UUID uuid = UUID.randomUUID();
 //		String uid = uuid.toString();
-		String uid = "3";
+		String uid = "1";
 		String tag = "testeinsert";
         String descricao = "testeinsert";
         
         PlantaJPAController instancePlanta = new PlantaJPAController();
         AreaJPAController instanceArea = new AreaJPAController();
         
-        instanceArea.insert(instancePlanta.find("2"), uid, descricao, tag);
+        instanceArea.insert(instancePlanta.find("1"), uid, descricao, tag);
         System.out.println("insert");
 	}
 	

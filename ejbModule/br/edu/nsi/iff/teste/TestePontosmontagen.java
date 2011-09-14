@@ -16,14 +16,14 @@ public class TestePontosmontagen {
 //		UUID uuid = UUID.randomUUID();
 //		String uid = uuid.toString();
 	
-		String uid = "3";
+		String uid = "1";
 		Integer sequencial = 1;
 		
 		PontosmontagenJPAController instancePontosmontagen = new PontosmontagenJPAController();
 		PontoJPAController instancePonto = new PontoJPAController();
 		MontagemJPAController instanceMontagem = new MontagemJPAController();
 		
-		instancePontosmontagen.insert(instancePonto.find("2"), instanceMontagem.find("2"), uid, sequencial);
+		instancePontosmontagen.insert(instancePonto.find("1"), instanceMontagem.find("1"), uid, sequencial);
 		System.out.println("insert");
 	}
 	
