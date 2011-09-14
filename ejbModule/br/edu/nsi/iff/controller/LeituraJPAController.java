@@ -8,7 +8,7 @@ import br.edu.nsi.iff.Pontosmontagen;
 
 public class LeituraJPAController extends AbstractPersistence {
 
-	public void insert(Pontosmontagen pontosmontagen, String uid, Timestamp datahora, float deslocamento, float picos, float rmspicos, float rmsruido, float rmstotal, float rotacao){
+	public void insert(Pontosmontagen pontosmontagen, String uid, Timestamp datahora, float deslocamento, float rmspicos, float rmsruido, float rmstotal, float rotacao){
 		
 		Leitura Leitura = new Leitura();
 		
@@ -16,7 +16,6 @@ public class LeituraJPAController extends AbstractPersistence {
 		Leitura.setIdleitura(uid);
 		Leitura.setDatahora(datahora);
 		Leitura.setDeslocamento(deslocamento);
-		Leitura.setPicos(picos);
 		Leitura.setRmspicos(rmspicos);
 		Leitura.setRmsruido(rmsruido);
 		Leitura.setRmstotal(rmstotal);
@@ -33,7 +32,7 @@ public class LeituraJPAController extends AbstractPersistence {
 		super.delete(Leitura.class, codigo);
 	}
 	
-	public void update(Pontosmontagen pontosmontagen, String uid, Timestamp datahora, float deslocamento, float picos, float rmspicos, float rmsruido, float rmstotal, float rotacao){
+	public void update(Pontosmontagen pontosmontagen, String uid, Timestamp datahora, float deslocamento, float rmspicos, float rmsruido, float rmstotal, float rotacao){
 		
 		Leitura Leitura = find(uid);
 		
@@ -41,7 +40,6 @@ public class LeituraJPAController extends AbstractPersistence {
 		Leitura.setIdleitura(uid);
 		Leitura.setDatahora(datahora);
 		Leitura.setDeslocamento(deslocamento);
-		Leitura.setPicos(picos);
 		Leitura.setRmspicos(rmspicos);
 		Leitura.setRmsruido(rmsruido);
 		Leitura.setRmstotal(rmstotal);

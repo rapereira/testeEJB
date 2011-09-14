@@ -3,6 +3,7 @@ package br.edu.nsi.iff;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 
 /**
@@ -20,8 +21,6 @@ public class Leitura implements Serializable {
 
 	private float deslocamento;
 
-	private float picos;
-
 	private float rmspicos;
 
 	private float rmsruido;
@@ -34,6 +33,10 @@ public class Leitura implements Serializable {
     @ManyToOne
 	@JoinColumn(name="idpontosmontagens")
 	private Pontosmontagen pontosmontagen;
+
+	//bi-directional many-to-one association to Pico
+	@OneToMany(mappedBy="leitura")
+	private List<Pico> picos;
 
     public Leitura() {
     }
@@ -60,14 +63,6 @@ public class Leitura implements Serializable {
 
 	public void setDeslocamento(float deslocamento) {
 		this.deslocamento = deslocamento;
-	}
-
-	public float getPicos() {
-		return this.picos;
-	}
-
-	public void setPicos(float picos) {
-		this.picos = picos;
 	}
 
 	public float getRmspicos() {
@@ -108,6 +103,14 @@ public class Leitura implements Serializable {
 
 	public void setPontosmontagen(Pontosmontagen pontosmontagen) {
 		this.pontosmontagen = pontosmontagen;
+	}
+	
+	public List<Pico> getPicos() {
+		return this.picos;
+	}
+
+	public void setPicos(List<Pico> picos) {
+		this.picos = picos;
 	}
 	
 }

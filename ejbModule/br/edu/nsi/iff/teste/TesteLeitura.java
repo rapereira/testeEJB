@@ -20,7 +20,6 @@ public class TesteLeitura {
 		String uid = "3";
 		Timestamp datahora = new Timestamp(System.currentTimeMillis());
 		float deslocamento = 1;
-		float picos = 1;
 		float rmspicos = 1;
 		float rmsruido = 1;
 		float rmstotal = 1;
@@ -29,7 +28,7 @@ public class TesteLeitura {
 		LeituraJPAController instanceLeitura = new LeituraJPAController();
 		PontosmontagenJPAController instancePontosmontagen = new PontosmontagenJPAController();
 		
-		instanceLeitura.insert(instancePontosmontagen.find("2"), uid, datahora, deslocamento, picos, rmspicos, rmsruido, rmstotal, rotacao);
+		instanceLeitura.insert(instancePontosmontagen.find("2"), uid, datahora, deslocamento, rmspicos, rmsruido, rmstotal, rotacao);
 		System.out.println("insert");
 	}
 	
@@ -37,7 +36,6 @@ public class TesteLeitura {
 		String uid = "2";
 		Timestamp datahora = new Timestamp(System.currentTimeMillis());
 		float deslocamento = 2;
-		float picos = 2;
 		float rmspicos = 2;
 		float rmsruido = 2;
 		float rmstotal = 2;
@@ -46,7 +44,7 @@ public class TesteLeitura {
 		LeituraJPAController instanceLeitura = new LeituraJPAController();
 		PontosmontagenJPAController instancePontosmontagen = new PontosmontagenJPAController();
 		
-		instanceLeitura.update(instancePontosmontagen.find("2"), uid, datahora, deslocamento, picos, rmspicos, rmsruido, rmstotal, rotacao);
+		instanceLeitura.update(instancePontosmontagen.find("2"), uid, datahora, deslocamento, rmspicos, rmsruido, rmstotal, rotacao);
 		System.out.println("update");
 	}
 	
@@ -65,7 +63,7 @@ public class TesteLeitura {
 		for (Leitura leitura : instanceLeitura.findAll()){
 			System.out.println("\nID: " + leitura.getIdleitura());
 			System.out.println("Datahora: " + leitura.getDatahora());
-			System.out.println("Picos: " + leitura.getPicos() + "\n");
+			System.out.println("Deslocamento: " + leitura.getDeslocamento() + "\n");
 		}
 	}
 }

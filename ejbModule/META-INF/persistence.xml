@@ -10,6 +10,7 @@
 		<class>br.edu.nsi.iff.Ponto</class>
 		<class>br.edu.nsi.iff.Pontosmontagen</class>
 		<class>br.edu.nsi.iff.Sensor</class>
+		<class>br.edu.nsi.iff.Pico</class>
 		<properties>       
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/> 
             <property name="hibernate.connection.username" value="postgres"/> 
