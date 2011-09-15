@@ -1,5 +1,7 @@
 package br.edu.nsi.iff.teste;
 
+import java.util.UUID;
+
 import br.edu.nsi.iff.Pico;
 import br.edu.nsi.iff.controller.LeituraJPAController;
 import br.edu.nsi.iff.controller.PicoJPAController;
@@ -8,7 +10,7 @@ public class TestePico {
 
 	public static void main(String[] args){
 		
-		TestePico.insert();
+		TestePico.list();
 	}
 	
 	public static void insert(){
@@ -55,7 +57,23 @@ public class TestePico {
 		for(Pico pico : instancePico.findAll()){
 			System.out.println("\nID: " + pico.getIdpico());
 			System.out.println("Amplitude: " + pico.getAmplitude());
-			System.out.println("Frequencia: " + pico.getFrequencia() + "\n");
+			System.out.println("ID leitura: " + pico.getLeitura().getIdleitura() + "\n");
 		}
+	}
+	
+	public static void popularinsert(String codigoleitura){
+		UUID uuid = UUID.randomUUID();
+		String uid = uuid.toString();
+		
+//		String uid = "1";
+		float amplitude = 1;
+		float fase = 1;
+		float frequencia = 1;
+		
+		PicoJPAController instancePico = new PicoJPAController();
+		LeituraJPAController instanceLeitura = new LeituraJPAController();
+		
+		instancePico.insert(instanceLeitura.find(codigoleitura), uid, amplitude, fase, frequencia);
+		System.out.println("insert pico");
 	}
 }
