@@ -3,6 +3,9 @@ package br.edu.nsi.iff.teste;
 import java.sql.Timestamp;
 import java.util.Random;
 
+import br.edu.nsi.iff.Leitura;
+import br.edu.nsi.iff.controller.LeituraJPAController;
+
 public class TestePopular {
 
 	public static void main(String[] args){
@@ -34,10 +37,15 @@ public class TestePopular {
 			String codigo = TesteLeitura.popularinsert(datahora);
 			System.out.println("insert LEITURA" + numberleitura);
 
+			
+			LeituraJPAController instanceLeitura = new LeituraJPAController();
+			
+			Leitura leitura = instanceLeitura.find(codigo);
+			
 			Random generator = new Random();
-			int random = generator.nextInt(10) + 10;
+			int random = generator.nextInt(10) + 5;
 			for (int numberpico = 1 ; numberpico <= random; numberpico++){
-				TestePico.popularinsert(codigo);
+				TestePico.popularinsert(leitura);
 				System.out.println("insert PICO" + numberpico);
 			}
 

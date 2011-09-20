@@ -8,6 +8,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import com.arjuna.ats.jta.transaction.Transaction;
+
+@SuppressWarnings("unused")
 public class AbstractPersistence {
 
 	EntityManagerFactory entityManagerFactory = Persistence
@@ -27,6 +30,7 @@ public class AbstractPersistence {
 		transaction.begin();
 
 		entityManager.merge(object);
+		transaction.rollback();
 		transaction.commit();
 	}
 

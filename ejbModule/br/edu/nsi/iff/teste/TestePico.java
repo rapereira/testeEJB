@@ -2,6 +2,7 @@ package br.edu.nsi.iff.teste;
 
 import java.util.UUID;
 
+import br.edu.nsi.iff.Leitura;
 import br.edu.nsi.iff.Pico;
 import br.edu.nsi.iff.controller.LeituraJPAController;
 import br.edu.nsi.iff.controller.PicoJPAController;
@@ -61,7 +62,7 @@ public class TestePico {
 		}
 	}
 	
-	public static void popularinsert(String codigoleitura){
+	public static void popularinsert(Leitura leitura){
 		UUID uuid = UUID.randomUUID();
 		String uid = uuid.toString();
 		
@@ -71,9 +72,9 @@ public class TestePico {
 		float frequencia = 1;
 		
 		PicoJPAController instancePico = new PicoJPAController();
-		LeituraJPAController instanceLeitura = new LeituraJPAController();
+		//LeituraJPAController instanceLeitura = new LeituraJPAController();
 		
-		instancePico.insert(instanceLeitura.find(codigoleitura), uid, amplitude, fase, frequencia);
+		instancePico.insert(leitura, uid, amplitude, fase, frequencia);
 		System.out.println("insert pico");
 	}
 }
