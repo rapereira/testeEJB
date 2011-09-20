@@ -29,31 +29,30 @@ public class TestePopular {
 	public static void leiturainstance(){
 
 		long fourminutes = 4 * 60 * 1000;
+		int dia = 360;
 		Timestamp datahora = new Timestamp(System.currentTimeMillis());
+		Timestamp datahorainicio = new Timestamp(System.currentTimeMillis());
 
-		for(int numberleitura = 1; numberleitura <= 5; numberleitura++){
+		for(int numberleitura = 1; numberleitura <= 1*dia; numberleitura++){
 			datahora.setTime(datahora.getTime() + fourminutes);
 
 			String codigo = TesteLeitura.popularinsert(datahora);
 			System.out.println("insert LEITURA" + numberleitura);
 
-			
+
 			LeituraJPAController instanceLeitura = new LeituraJPAController();
-			
+
 			Leitura leitura = instanceLeitura.find(codigo);
-			
+
 			Random generator = new Random();
-			int random = generator.nextInt(10) + 5;
+			int random = generator.nextInt(10) + 15;
 			for (int numberpico = 1 ; numberpico <= random; numberpico++){
 				TestePico.popularinsert(leitura);
 				System.out.println("insert PICO" + numberpico);
 			}
-
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
 		}
+
+		Timestamp datahorafim = new Timestamp(System.currentTimeMillis());
+		System.out.println(datahorainicio.toString() + "\n" + datahorafim.toString());
 	}
 }

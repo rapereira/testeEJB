@@ -13,11 +13,16 @@ import com.arjuna.ats.jta.transaction.Transaction;
 @SuppressWarnings("unused")
 public class AbstractPersistence {
 
-	EntityManagerFactory entityManagerFactory = Persistence
-			.createEntityManagerFactory("testeEJB");
-	EntityManager entityManager = entityManagerFactory.createEntityManager();
+	protected static EntityManagerFactory entityManagerFactory;
+    protected static EntityManager entityManager;
+    protected static EntityTransaction transaction;
+    static {
+        entityManagerFactory = Persistence
+                .createEntityManagerFactory("testeEJB");
+        entityManager = entityManagerFactory.createEntityManager();
 
-	EntityTransaction transaction = entityManager.getTransaction();
+        transaction = entityManager.getTransaction();
+    }
 
 	public void insert(Object object) {
 		transaction.begin();
